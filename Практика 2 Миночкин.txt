@@ -1,0 +1,53 @@
+Main.java
+package com.company;
+
+public class Main {
+    public static void main(String[] args) {
+        Author ath1 = new Author("Ilya", "ilyaSuper2000@mail.ru", false);
+        System.out.println(ath1);
+        System.out.println(ath1.getEmail());
+        ath1.setEmail("Parviz123@microsoft.com");
+        System.out.println(ath1.getName());
+        System.out.println(ath1);
+    }
+}
+
+Author.java
+package com.company;
+
+/**
+ * Created by Kostya on 17.09.2018.
+ */
+public class Author {
+    private String name;
+    private String email;
+    private boolean male;
+
+    public Author (String name, String email, boolean male) {
+        this.name = name;
+        this.email = email;
+        this.male = male;
+    }
+    public String getName() {
+        return name;
+    }
+    public String getEmail() {
+        return email;
+    }
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    public String getGender(){
+        if (male)
+            return "Male author";
+        else
+            return "Female author";
+    }
+
+    public String toString() {
+        if (male)
+            return "Male author - "+ name + " has email: "+email;
+        else
+            return "Female author - "+ name + " has email: "+email;
+    }
+}
